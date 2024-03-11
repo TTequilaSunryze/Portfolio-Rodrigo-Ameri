@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets"
+import htmlIcon from "../icons/htmlIcon.astro"
+import cssIcon from "../icons/cssIcon.astro"
+import javascriptIcon from "../icons/javascriptIcon.astro"
+import tailwindcssIcon from "../icons/tailwindcssIcon.astro"
+import  astroIcon  from "../icons/astroIcon.astro"
+const TAGS ={
+  HTML: {
+    color: 'text-red-500',
+    name: 'HTML',
+    class: 'bg-red-500 text-white',
+    icon: htmlIcon,
+  },
+  CSS: {
+    color: 'text-blue-500',
+    name: 'CSS',
+    class: 'bg-blue-500 text-white',
+    icon: cssIcon,
+  },
+  JAVASCRIPT: {
+    color: 'text-yellow-500',
+    name: 'JAVASCRIPT',
+    class: 'bg-yellow-500 text-white',
+    icon: javascriptIcon,
+  },
+  ASTRO: {
+    color: 'text-purple-500',
+    name: 'ASTRO',
+    class: 'bg-purple-500 text-white',
+    icon: astroIcon,
+  },
+  TAILWINDCSS: {
+    color: 'text-cyan-500',
+    name: 'TAILWINDCSS',
+    class: 'bg-cyan-500 text-white',
+    icon: tailwindcssIcon,
+  }
+
+}
+const PROJECTS = [
+  {
+    title: 'Cervecería Ameris Brewhouse',
+    description: 'Página principal de la web de la cervecería artesanal "Ameris Brewhouse"',
+    image:"/projects/ameris-web.webp",
+    link: "https://amerisbrewhouse.com",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
+  },
+  {
+    title: 'Portfolio',
+    description: 'Portfolio actual, con el que estoy trabajando en este momento, con un diseño minimalista y moderno.',
+    image: '/projects/Portfolio.webp',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.ASTRO, TAGS.TAILWINDCSS]
+  },
+]
+---
+{
+    PROJECTS.map(({ title, description, tags, image}) =>(
+        <article class="ms-4">
+            <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2 mt-10">{title}</h3>
+            <p class="mb-4 text-lg font-normal text-pretty">{description}</p>
+            <ul class="text-base flex flex-row gap-x-6 ">
+                {tags.map((tag) => (
+                    <li class="">
+                      <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}>
+                      {tag.name}
+                      <tag.icon class="size-5 flex"/>
+                      </span>
+               
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/20 size-66" src={image} alt={`Captura de ${image}`} />
+        </article>
+    ))
+}

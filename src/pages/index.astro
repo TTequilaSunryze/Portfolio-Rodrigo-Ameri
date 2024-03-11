@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import Container from '../components/Container.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import GitHub from '../icons/GitHub.astro';
+import Cv from '../icons/Cv.astro';
+import ExperienceIcon from '../icons/ExperienceIcon.astro';
+import Social from '../components/Social.astro';
+import Email from '../icons/Email.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Code from '../icons/Code.astro';
+import CodeOff from '../icons/CodeOff.astro';
+
+
+---
+
+<Layout title="Hola, Soy Rodrigo Desarrollador y programador Web.">
+
+	<main>
+		<Container class="py-44 pb-30">
+			<img
+			class="rounded-full size-20 mb-5 cursor-pointer transition duration-300 transform hover:scale-110 "
+			src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc" 
+			alt="mi foto" 
+		/>
+			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 ">
+				Hey, Soy Rodrigo <a 
+				href="https://www.linkedin.com/in/rodrigo-ameri-5523911ab/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex justify-center items-center"
+			>
+				<Badge>Disponible para trabajar!</Badge>
+				</a>
+			</h1>
+			
+			<h2 class="text-xl lg:text-xl text-wrap max-w-[700px] lg:pb-10">
+				<span class="text-yellow-200/90 ">Diseñador Web Junior y Programador ÍtaloArgentino en Valencia.</span>
+				<span class="opacity-80">Me gusta trabajar con tecnologías modernas y aprender cosas nuevas, trabajar en equipo y aprender de los demás.</span>
+			</h2>
+		
+			<nav class="flex flex-row gap-4 mt-4 flex-wrap">
+				<Social href="https://www.linkedin.com/in/rodrigo-ameri">
+						<Linkedin class="size-2 lg:size-5" />
+					Linkedin
+				</Social>
+			
+				<Social href="https://github.com/TTequilaSunryze">
+					<GitHub class="size-2 lg:size-5" />
+				GitHub
+				</Social>
+				<Social>
+					<Cv class="size-2 lg:size-6" />
+					Descargar CV
+				</Social>
+				<Social href= "mailto:Rodrigoamericarp@gmail.com">
+					<Email  class="size-2 lg:size-5" />
+					Rodrigoamericarp@gmail.com
+				</Social>
+			</nav>
+		</Container>
+		<!-- <Container id="Experiencia">
+			<h2 class="text-2xl font-semibold flex gap-x-2 items-center mb-5" >
+				<ExperienceIcon class="size-6"/>
+				Experiencia
+			</h2>
+		</Container>
+		<Container>			
+			<Experience/>
+		</Container> -->
+		<Container>
+			<h2 id="projects" class="text-2xl font-semibold flex gap-x-2 items-center mb-5">
+				<Code class="size-6"/>
+				Projects
+			</h2>
+		</Container>
+
+		<Container>
+		<div class="">
+			<Projects/>
+		</div>
+			<CodeOff class="size-6"/>
+		</Container>
+	</main>
+</Layout>
+
+

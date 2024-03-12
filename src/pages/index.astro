@@ -12,6 +12,7 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Code from '../icons/Code.astro';
 import CodeOff from '../icons/CodeOff.astro';
+import AboutMe from '../components/AboutMe.astro';
 
 
 ---
@@ -19,13 +20,13 @@ import CodeOff from '../icons/CodeOff.astro';
 <Layout title="Hola, Soy Rodrigo Desarrollador y programador Web.">
 
 	<main>
-		<Container class="py-44 pb-30">
+		<Container class=" w-full lg:w-[740px] mx-auto py-44 pb-30">
 			<img
 			class="rounded-full size-20 mb-5 cursor-pointer transition duration-300 transform hover:scale-110 "
 			src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc" 
 			alt="mi foto" 
 		/>
-			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 ">
+			<h1 class="text-white sm:text-xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 text-wrap">
 				Hey, Soy Rodrigo <a 
 				href="https://www.linkedin.com/in/rodrigo-ameri-5523911ab/"
 				target="_blank"
@@ -36,12 +37,12 @@ import CodeOff from '../icons/CodeOff.astro';
 				</a>
 			</h1>
 			
-			<h2 class="text-xl lg:text-xl text-wrap max-w-[700px] lg:pb-10">
+			<h2 class="text-xl lg:text-xl text-wrap max-w-[700px] pb-6 lg:pb-8">
 				<span class="text-yellow-200/90 ">Diseñador Web Junior y Programador ÍtaloArgentino en Valencia.</span>
 				<span class="opacity-80">Me gusta trabajar con tecnologías modernas y aprender cosas nuevas, trabajar en equipo y aprender de los demás.</span>
 			</h2>
 		
-			<nav class="flex flex-row gap-4 mt-4 flex-wrap">
+			<nav class="flex flex-row gap-4 mt-2 flex-wrap">
 				<Social href="https://www.linkedin.com/in/rodrigo-ameri">
 						<Linkedin class="size-2 lg:size-5" />
 					Linkedin
@@ -51,10 +52,12 @@ import CodeOff from '../icons/CodeOff.astro';
 					<GitHub class="size-2 lg:size-5" />
 				GitHub
 				</Social>
-				<Social>
-					<Cv class="size-2 lg:size-6" />
+				
+				<Social href="../CV.pdf" download="CV.pdf">
+					<Cv class="size-2 lg:size-5" />
 					Descargar CV
 				</Social>
+
 				<Social href= "mailto:Rodrigoamericarp@gmail.com">
 					<Email  class="size-2 lg:size-5" />
 					Rodrigoamericarp@gmail.com
@@ -71,18 +74,30 @@ import CodeOff from '../icons/CodeOff.astro';
 			<Experience/>
 		</Container> -->
 		<Container>
-			<h2 id="projects" class="text-2xl font-semibold flex gap-x-2 items-center mb-5">
+			<h2 id="projects" class="sm:w-[600px] w-1/3 text-2xl font-semibold flex gap-x-2 items-center mb-5 ">
 				<Code class="size-6"/>
 				Projects
 			</h2>
+			<Projects/>
+			<CodeOff class="size-6"/>
 		</Container>
 
 		<Container>
-		<div class="">
-			<Projects/>
-		</div>
-			<CodeOff class="size-6"/>
+			<div id="about" class=" lg:w-[740px] mx-auto">
+				<h2 class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10">
+					Sobre mí
+				</h2>
+				<div class="flex flex-col sm:flex-row w-full">
+					<AboutMe />
+					<img 
+						src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc" 
+						alt="Foto de Rodrigo Ameri" 
+						class="rounded-full shadow-2xl  hover:shadow-white/90 size-50 sm:size-40 md:size-60 order-1">
+				</div>
+				
+			</div>	
 		</Container>
+
 	</main>
 </Layout>
 

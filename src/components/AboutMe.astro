@@ -1,18 +1,23 @@
-<section class="sm:order-2 sm:text-center">
+---
+import { getI18N } from "../i18n/"
+const { currentLocale = 'es' } = Astro
+const i18n = getI18N({currentLocale});
+---
+
+
+
+<section class="sm:order-2 sm:text-center text-balance">
     <div>
         <p>
-            Soy Rodrigo, tengo 26 años y actualmente estudio Desarrollo de aplicaciones web en Master D Valencia. Disfruto mucho programando, aprendiendo y creando experiencias
-            web para los usuarios.
+          {i18n.ABOUT_ME_TEXT1}
         </p>
         
         <p>
-            Entre mis éxitos, puedo destacar que he sido capaz de aprender a programar en poco tiempo,
-            que continuo además con masters y formación autodidacta complementaria. 
+            {i18n.ABOUT_ME_TEXT2} 
         </p>
         
         <p>
-            Me considero una persona muy responsable, con capacidad de trabajo en equipo, con facilidad para
-            aprender y adaptarme a nuevos desafíos.
+            {i18n.ABOUT_ME_TEXT3}
         </p>
     </div>
 </section>

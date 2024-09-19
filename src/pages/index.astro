@@ -1,105 +1,115 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import Container from '../components/Container.astro';
-import Linkedin from '../icons/Linkedin.astro';
-import GitHub from '../icons/GitHub.astro';
-import Cv from '../icons/Cv.astro';
-import ExperienceIcon from '../icons/ExperienceIcon.astro';
-import Social from '../components/Social.astro';
-import Email from '../icons/Email.astro';
-import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
-import Code from '../icons/Code.astro';
-import CodeOff from '../icons/CodeOff.astro';
-import AboutMe from '../components/AboutMe.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Container from "../components/Container.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import GitHub from "../icons/GitHub.astro";
+import Cv from "../icons/Cv.astro";
+import ExperienceIcon from "../icons/ExperienceIcon.astro";
+import Social from "../components/Social.astro";
+import Email from "../icons/Email.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Code from "../icons/Code.astro";
+import CodeOff from "../icons/CodeOff.astro";
+import AboutMe from "../components/AboutMe.astro";
 
-import { getI18N } from "../i18n/"
-const { currentLocale = 'es' } = Astro
-const i18n = getI18N({currentLocale});
+import { getI18N } from "../i18n/";
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout title={i18n.SEO_TITLE}>
+  <main>
+    <Container
+      id="scroll-animation"
+      class="lg:w-[740px] mx-auto my-44 mb-30 w-[300px]"
+    >
+      <img
+        class="rounded-full size-20 mb-5 cursor-pointer transition duration-300 transform hover:scale-110"
+        src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc"
+        alt="mi foto"
+      />
+      <h1
+        class="text-white sm:text-xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 text-wrap"
+      >
+        {i18n.INTRO_TEXT}<a
+          href="https://www.linkedin.com/in/rodrigo-ameri-5523911ab/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex justify-center items-center"
+        >
+          <Badge>{i18n.INTRO_BADGE}</Badge>
+        </a>
+      </h1>
 
-	<main>
-		<Container id="scroll-animation" class="lg:w-[740px] mx-auto my-44 mb-30 w-[300px]">
-			<img
-			class="rounded-full size-20 mb-5 cursor-pointer transition duration-300 transform hover:scale-110 "
-			src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc" 
-			alt="mi foto" 
-		/>
-			<h1 class="text-white sm:text-xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 text-wrap">
-				{i18n.INTRO_TEXT}<a 
-				href="https://www.linkedin.com/in/rodrigo-ameri-5523911ab/"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex justify-center items-center"
-			>
-				<Badge>{i18n.INTRO_BADGE}</Badge>
-				</a>
-			</h1>
-			
-			<h2 class="text-xl lg:text-xl text-wrap max-w-[700px] pb-6 lg:pb-8">
-				<span class="text-yellow-200/90 ">{i18n.INTRO_TEXT2}</span>
-				<span class="opacity-80">{i18n.INTRO_TEXT3}</span>
-			</h2>
-		
-			<nav class="flex flex-row gap-4 mt-2 flex-wrap">
-				<Social href="https://www.linkedin.com/in/rodrigo-ameri">
-						<Linkedin class="size-2 lg:size-5" />
-					Linkedin
-				</Social>
-			
-				<Social href="https://github.com/TTequilaSunryze">
-					<GitHub class="size-2 lg:size-5" />
-				GitHub
-				</Social>
-				
-				<Social href="../CV-Desarrollador-Web-EN.pdf" download="CV-Desarrollador-Web-EN.pdf">
-					<Cv class="size-2 lg:size-5" />
-					Descargar CV
-				</Social>
+      <h2 class="text-xl lg:text-xl text-wrap max-w-[700px] pb-6 lg:pb-8">
+        <span class="text-yellow-200/90">{i18n.INTRO_TEXT2}</span>
+        <span class="opacity-80">{i18n.INTRO_TEXT3}</span>
+      </h2>
 
-				<Social href= "mailto:Rodrigoamericarp@gmail.com">
-					<Email  class="size-2 lg:size-5" />
-					Rodrigoamericarp@gmail.com
-				</Social>
-			</nav>
-		</Container>
-		<!-- <Container id="Experiencia">
-			<h2 class="text-2xl font-semibold flex gap-x-2 items-center mb-5" >
-				<ExperienceIcon class="size-6"/>
-				Experiencia
-			</h2>
-		</Container>
-		<Container>			
-			<Experience/>
-		</Container> -->
-		<Container  id="scroll-animation" class="scroll-animation">
-			<h2 id="projects" class="sm:w-[600px] w-[300px]text-2xl font-semibold flex gap-x-2 items-center mb-5 ">
-				<Code class="size-6"/>
-				Projects
-			</h2>
-			<Projects/>
-			<CodeOff class="size-6"/>
-		</Container>
+      <nav class="flex flex-row gap-4 mt-2 flex-wrap">
+        <Social href="https://www.linkedin.com/in/rodrigo-ameri">
+          <Linkedin class="size-2 lg:size-5" />
+          Linkedin
+        </Social>
 
-		<Container  id="scroll-animation" class ="scroll-animation">
-			<div id="about" class=" lg:w-[740px] mx-auto w-[300px]">
-				<h2 class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10">
-					{i18n.ABOUT_ME}
-				</h2>
-				<div class="flex flex-col sm:flex-row w-full">
-					<AboutMe />
-					<img 
-						src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc" 
-						alt="Foto de Rodrigo Ameri" 
-						class="rounded-full shadow-2xl  hover:shadow-white/90 size-50 sm:size-40 md:size-60 order-1">
-				</div>
-				
-			</div>	
-		</Container>
+        <Social href="https://github.com/TTequilaSunryze">
+          <GitHub class="size-2 lg:size-5" />
+          GitHub
+        </Social>
 
-	</main>
+        <Social
+          href="../CV-Desarrollador-Web-EN.pdf"
+          download="CV-Desarrollador-Web-EN.pdf"
+        >
+          <Cv class="size-2 lg:size-5" />
+          Descargar CV
+        </Social>
+
+        <Social href="mailto:Rodrigoamericarp@gmail.com">
+          <Email class="size-2 lg:size-5" />
+          Rodrigoamericarp@gmail.com
+        </Social>
+      </nav>
+    </Container>
+    <Container id="Experiencia">
+      <h2 class="text-2xl font-semibold flex gap-x-2 items-center mb-5">
+        <ExperienceIcon class="size-6" />
+        Experiencia
+      </h2>
+    </Container>
+    <Container>
+      <Experience />
+    </Container>
+    <Container id="scroll-animation" class="scroll-animation">
+      <h2
+        id="projects"
+        class="sm:w-[600px] w-[300px]text-2xl font-semibold flex gap-x-2 items-center mb-5"
+      >
+        <Code class="size-6" />
+        Projects
+      </h2>
+      <Projects />
+      <CodeOff class="size-6" />
+    </Container>
+
+    <Container id="scroll-animation" class="scroll-animation">
+      <div id="about" class="lg:w-[740px] mx-auto w-[300px]">
+        <h2
+          class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10"
+        >
+          {i18n.ABOUT_ME}
+        </h2>
+        <div class="flex flex-col sm:flex-row w-full">
+          <AboutMe />
+          <img
+            src="https://media.licdn.com/dms/image/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_800_800/0/1699640437330?e=1715212800&v=beta&t=Xc5LkSKK-XKMjFCM0nDZjetnRAsU5FOCnMEl0QxFOJc"
+            alt="Foto de Rodrigo Ameri"
+            class="rounded-full shadow-2xl hover:shadow-white/90 size-50 sm:size-40 md:size-60 order-1"
+          />
+        </div>
+      </div>
+    </Container>
+  </main>
 </Layout>
-

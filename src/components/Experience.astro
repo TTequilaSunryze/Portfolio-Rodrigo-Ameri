@@ -1,26 +1,21 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
-    {
-        date:'Actualmente',
-        title:'Landing Page Ameris Brewhouse ',
-        description: 'landing page para una cerveceria artesanal, con un diseño moderno y atractivo, con un diseño responsivo y con un codigo limpio y ordenado',
-    },
-    {
-        date:'Actualmente',
-        title:'Landing Page Ameris Brewhouse ui code in Tailwind CSS',
-        description: 'landing page para una cerveceria artesanal, con un diseño moderno y atractivo, con un diseño responsivo y con un codigo limpio y ordenado',
-    },
-]
+  {
+    date: "2024",
+    title: "Landing Page Ameris Brewhouse ",
+    description:
+      "landing page para una cerveceria artesanal, con un diseño moderno y atractivo, con un diseño responsivo y con un codigo limpio y ordenado",
+  },
+];
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">   
-    
-    {
-        EXPERIENCE.map((experience) =>(
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...experience} />
-            </li>
-        ))
-    }        
 
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
 </ol>

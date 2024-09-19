@@ -1,59 +1,58 @@
 ---
-import '@fontsource/libre-baskerville'
-import Header from '../components/Header.astro'
-import Badge from '../components/Badge.astro'
-import Footer from '../components/Footer.astro'
+import "@fontsource/libre-baskerville";
+import Header from "../components/Header.astro";
+import Badge from "../components/Badge.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
-	title: string;
+  title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="px-8">
-		<!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(150%_150%_at_50%_10%,#000_30%,#63f_100%)]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="px-8">
+    <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(150%_150%_at_50%_10%,#000_30%,#63f_100%)]">
 		</div> -->
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
-
 <style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html {
-		font-family: 'libre baskerville', system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "libre baskerville", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
 
-	body{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		min-height: 100vh;
-		background-image: linear-gradient(to top, #531807 5%, #1a0101 100%);
-	}
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #531807 5%, #1a0101 100%);
+  }
 
-	@media (prefers-reduced-motion: reduce) {
-		html {
-			scroll-behavior: smooth;
-		}
-}
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 
-p {
-	line-height: 1.5;
-	margin: 10px 0;
-}
+  p {
+    line-height: 1.5;
+    margin: 10px 0;
+  }
 </style>

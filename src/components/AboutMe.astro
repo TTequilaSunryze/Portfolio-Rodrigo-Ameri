@@ -1,23 +1,28 @@
 ---
-import { getI18N } from "../i18n/"
-const { currentLocale = 'es' } = Astro
-const i18n = getI18N({currentLocale});
+import { getI18N } from "../i18n/";
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
+<section
+  class="sm:order-1 sm:text-center text-balance flex flex-row gap-y-4 sm:gap-y-0 sm:gap-x-4 items-center"
+>
+  <img
+    src="https://media.licdn.com/dms/image/v2/D4D03AQHC-GMa7YBdsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699640437330?e=2147483647&v=beta&t=8k38M5q9naPlMksjewF7HcGtaPjSllIK5oPElZnztfk"
+    alt="Foto de Rodrigo Ameri"
+    class="rounded-full flex size-460 sm:size-20 md:size-60 object-cover object-top hover:shadow-white/90 transition-transform duration-300 ease-in-out"
+  />
+  <div>
+    <p>
+      {i18n.ABOUT_ME_TEXT1}
+    </p>
 
+    <p>
+      {i18n.ABOUT_ME_TEXT2}
+    </p>
 
-<section class="sm:order-2 sm:text-center text-balance">
-    <div>
-        <p>
-          {i18n.ABOUT_ME_TEXT1}
-        </p>
-        
-        <p>
-            {i18n.ABOUT_ME_TEXT2} 
-        </p>
-        
-        <p>
-            {i18n.ABOUT_ME_TEXT3}
-        </p>
-    </div>
+    <p>
+      {i18n.ABOUT_ME_TEXT3}
+    </p>
+  </div>
 </section>

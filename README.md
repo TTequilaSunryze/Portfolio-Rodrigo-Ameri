@@ -1,2 +1,3 @@
 Portfolio Rodrigo Ameri  
-![Portfolio](https://github.com/TTequilaSunryze/Portfolio-Rodrigo-Ameri/assets/102526770/4e21d7c3-9dcc-4c75-8538-851d86184615)
+![image](https://github.com/user-attachments/assets/1f1147d5-dac7-4309-9612-641d78a0d8b8)
+

@@ -1,15 +1,37 @@
 ---
-import { getI18N } from "../i18n/"
-const { currentLocale = 'es' } = Astro
-const i18n = getI18N({currentLocale});
+import { getI18N } from "../i18n/";
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<header id="home"  class="flex flex-row justify-center items-center py-5 w-full xl:w-[1280px] mx-auto">
-    <nav class="flex flex-row gap-x-5 opacity-80 flex-wrap text-sm md:text-lg">
-        <a class="transform hover:scale-110" href=/#home>{i18n.HEADER_TEXT1}</a>
-        <a class="transform hover:scale-110" href=/#about>{i18n.HEADER_TEXT2}</a>
-        <a class="transform hover:scale-110" href=/#projects>{i18n.HEADER_TEXT3}</a>
-        <a class="transform hover:scale-110" href=/#contact">{i18n.HEADER_TEXT4}</a>
-    </nav>
+<header
+  id="home"
+  class="flex flex-row justify-center items-center py-5 w-full xl:w-[1280px] mx-auto"
+>
+  <nav class="flex flex-row gap-x-5 opacity-80 flex-wrap text-sm md:text-lg">
+    <a class="transform hover:scale-110" href="/#home">{i18n.HEADER_TEXT1}</a>
+    <a class="transform hover:scale-110" href="/#about">{i18n.HEADER_TEXT2}</a>
+    <a class="transform hover:scale-110" href="/#projects"
+      >{i18n.HEADER_TEXT3}</a
+    >
+    <a class="transform hover:scale-110" href='/#contact"'
+      >{i18n.HEADER_TEXT4}</a
+    >
+  </nav>
+  <ion-icon
+    id="cambiarIdioma"
+    name="globe-outline"
+    class="mx-5 transform hover:scale-110 cursor-pointer"></ion-icon>
 </header>
 
+<script>
+  //cambiar idioma con un click
+  const button = document.getElementById("cambiarIdioma");
+  button?.addEventListener("click", () => {
+    if (window.location.pathname === "/") {
+      window.location.pathname = "/en/";
+    } else {
+      window.location.pathname = "/";
+    }
+  });
+</script>

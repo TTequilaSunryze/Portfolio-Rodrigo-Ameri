@@ -13,6 +13,7 @@ import Projects from "../../components/Projects.astro";
 import Code from "../../icons/Code.astro";
 import CodeOff from "../../icons/CodeOff.astro";
 import AboutMe from "../../components/AboutMe.astro";
+import Contact from "../../components/contact.astro";
 
 import { getI18N } from "../../i18n/";
 const { currentLocale = "es" } = Astro;
@@ -64,7 +65,7 @@ const i18n = getI18N({ currentLocale });
           download="CV-Desarrollador-Web-EN.pdf"
         >
           <Cv class="size-2 lg:size-5" />
-          Descargar CV
+          Download CV
         </Social>
 
         <Social href="mailto:Rodrigoamericarp@gmail.com">
@@ -73,7 +74,7 @@ const i18n = getI18N({ currentLocale });
         </Social>
       </nav>
     </Container>
-    <!-- <Container id="Experiencia">
+{    <!-- <Container id="Experiencia">
 			<h2 class="text-2xl font-semibold flex gap-x-2 items-center mb-5" >
 				<ExperienceIcon class="size-6"/>
 				Experiencia
@@ -81,7 +82,7 @@ const i18n = getI18N({ currentLocale });
 		</Container>
 		<Container>			
 			<Experience/>
-		</Container> -->
+		</Container> -->}
     <Container id="scroll-animation" class="scroll-animation">
       <h2
         id="projects"
@@ -92,6 +93,17 @@ const i18n = getI18N({ currentLocale });
       </h2>
       <Projects />
       <CodeOff class="size-6" />
+    </Container>
+    <Container id="scroll-animation" class="scroll-animation">
+      <div id="contact" class="lg:w-[740px] mx-auto w-[300px]">
+        <h2
+          class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10"
+        >
+          {i18n.CONTACT}
+        </h2>
+          {i18n.CONTACT_TEXT1}
+        <Contact />
+      </div>
     </Container>
   </main>
   <Container id="scroll-animation" class="scroll-animation">

@@ -74,7 +74,7 @@ const i18n = getI18N({ currentLocale });
         </Social>
       </nav>
     </Container>
-    <!-- <Container id="Experiencia">
+{    <!-- <Container id="Experiencia">
 			<h2 class="text-2xl font-semibold flex gap-x-2 items-center mb-5" >
 				<ExperienceIcon class="size-6"/>
 				Experiencia
@@ -82,7 +82,7 @@ const i18n = getI18N({ currentLocale });
 		</Container>
 		<Container>			
 			<Experience/>
-		</Container> -->
+		</Container> -->}
     <Container id="scroll-animation" class="scroll-animation">
       <h2
         id="projects"
@@ -94,24 +94,6 @@ const i18n = getI18N({ currentLocale });
       <Projects />
       <CodeOff class="size-6" />
     </Container>
-
-    <Container id="scroll-animation" class="scroll-animation">
-      <div id="about" class="lg:w-[740px] mx-auto w-[300px]">
-        <h2
-          class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10"
-        >
-          {i18n.ABOUT_ME}
-        </h2>
-        <div class="flex flex-col sm:flex-row w-full">
-          <AboutMe />
-          <img
-            src="../../public/img/yo.heic"
-            alt="Foto de Rodrigo Ameri"
-            class="rounded-full shadow-2xl hover:shadow-white/90 size-50 sm:size-40 md:size-60 order-1"
-          />
-        </div>
-      </div>
-    </Container>
     <Container id="scroll-animation" class="scroll-animation">
       <div id="contact" class="lg:w-[740px] mx-auto w-[300px]">
         <h2
@@ -121,7 +103,6 @@ const i18n = getI18N({ currentLocale });
         </h2>
         <div class="flex flex-col sm:flex-row w-full">
           {i18n.CONTACT_TEXT1}
-          <br />
           <br />
           {i18n.CONTACT_TEXT2}
           <br />
@@ -138,6 +119,23 @@ const i18n = getI18N({ currentLocale });
           {i18n.CONTACT_TEXT3}
           <br />
           Rodrigoamericarp@gmail.com
+        </div>
+      </div>
+    </Container>
+    <Container id="scroll-animation" class="scroll-animation">
+      <div id="about" class="lg:w-[740px] mx-auto w-[300px]">
+        <h2
+          class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10"
+        >
+          {i18n.ABOUT_ME}
+        </h2>
+        <div class="flex flex-col sm:flex-row w-full">
+          <AboutMe />
+          <img
+            src="../../public/img/yo.heic"
+            alt="Foto de Rodrigo Ameri"
+            class="rounded-full shadow-2xl hover:shadow-white/90 size-50 sm:size-40 md:size-60 order-1"
+          />
         </div>
       </div>
     </Container>

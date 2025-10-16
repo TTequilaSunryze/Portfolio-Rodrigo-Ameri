@@ -13,6 +13,7 @@ import Projects from "../components/Projects.astro";
 import Code from "../icons/Code.astro";
 import CodeOff from "../icons/CodeOff.astro";
 import AboutMe from "../components/AboutMe.astro";
+import Contact from "../components/contact.astro";
 
 import { getI18N } from "../i18n/";
 const { currentLocale = "es" } = Astro;
@@ -93,7 +94,17 @@ const i18n = getI18N({ currentLocale });
       <Projects />
       <CodeOff class="size-6" />
     </Container>
-
+    <Container id="scroll-animation" class="scroll-animation">
+      <div id="contact" class="lg:w-[740px] mx-auto w-[300px]">
+        <h2
+          class="sm:text-xl text-md lg:text-2xl w-full font-semibold text-yellow-200/90 my-10"
+        >
+          {i18n.CONTACT}
+        </h2>
+        {i18n.CONTACT_TEXT1}
+        <Contact />
+      </div>
+    </Container>
     <Container id="scroll-animation" class="scroll-animation">
       <div id="about" class="lg:w-[740px] mx-auto w-[300px]">
         <h2

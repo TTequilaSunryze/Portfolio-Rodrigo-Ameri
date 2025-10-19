@@ -12,10 +12,11 @@
     "HEADER_TEXT2": "About me",
     "HEADER_TEXT3": "Projects",
     "HEADER_TEXT4": "Contact",
+    "PROJECT1":"landing page para una cerveceria artesanal, con un diseño moderno y atractivo, con un diseño responsivo y con un codigo limpio y ordenado",
     "CONTACT":"Contact",
-    "CONTACT_TEXT1":"Si tienes alguna pregunta, comentario o sugerencia, no dudes en contactarme.",
-    "CONTACT_TEXT2":"Puedes encontrarme en Linkedin, Twitter, Instagram, GitHub, y en mi correo electrónico.",
-    "CONTACT_TEXT3":"Mi correo electrónico es Rodrigoamericarp@gmail.com",
+    "CONTACT_TEXT1":"If you have any questions, comments or suggestions, feel free to contact me.",
+    "CONTACT_TEXT2":"You can find me on Linkedin, Instagram, GitHub, and in my email.",
+    "CONTACT_TEXT3":"Mi email is Rodrigoamericarp@gmail.com",
     "FOOTER_TEXT1":"All rights reserved."
 
 }

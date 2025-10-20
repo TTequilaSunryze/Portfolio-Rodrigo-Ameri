@@ -1,0 +1,16 @@
+---
+
+---
+
+<script>
+  window.addEventListener("scroll", () => {
+    const arrowScroll = document.querySelector("#arrow_scroll") as HTMLElement;
+    if (!arrowScroll) return;
+
+    if (window.scrollY > 100) {
+      arrowScroll.style.opacity = "0";
+    } else {
+      arrowScroll.style.opacity = "0.5";
+    }
+  });
+</script>

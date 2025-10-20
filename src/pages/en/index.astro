@@ -136,16 +136,3 @@ const i18n = getI18N({ currentLocale });
     </div>
   </Container>
 </Layout>
---- IGNORE ---
-<script>
-  const arrowScroll = document.getElementById("arrow_scroll");
-  if (!arrowScroll) return;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      arrowScroll.style.opacity = "0";
-    } else {
-      arrowScroll.style.opacity = "0.5";
-    }
-  });
-</script>

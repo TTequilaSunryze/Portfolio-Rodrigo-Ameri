@@ -2,11 +2,12 @@
 import { getI18N } from "../i18n/";
 const { currentLocale = "es" } = Astro;
 import ExperienceItem from "./ExperienceItem.astro";
+const i18n = getI18N({ currentLocale });
 const EXPERIENCE = [
   {
-    date: "2024",
-    title: "Landing Page Ameris Brewhouse ",
-    description: "{I18n.PROJECT1}",
+    title: i18n.EXPERIENCE_TITLE,
+    description: i18n.EXPERIENCE_DESCRIPTION,
+    date: i18n.EXPERIENCE_DATE,
   },
 ];
 ---

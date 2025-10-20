@@ -8,30 +8,48 @@ const i18n = getI18N({ currentLocale });
   id="home"
   class="flex flex-row justify-center items-center py-5 w-full xl:w-[1280px] mx-auto"
 >
-  <nav class="flex flex-row gap-x-5 opacity-80 flex-wrap text-sm md:text-lg">
-    <a class="transform hover:scale-110" href="/#home">{i18n.HEADER_TEXT1}</a>
-    <a class="transform hover:scale-110" href="/#about">{i18n.HEADER_TEXT2}</a>
-    <a class="transform hover:scale-110" href="/#projects"
-      >{i18n.HEADER_TEXT3}</a
+  <nav class="flex flex-row gap-x-5 opacity-80 flex-wrap text-sm md:text-xl">
+    <a
+      class="transform ease-in duration-300 transition hover:text-yellow-400 hover:scale-110"
+      href="/#home">{i18n.HEADER_TEXT1}</a
     >
-    <a class="transform hover:scale-110" href='/#contact"'
-      >{i18n.HEADER_TEXT4}</a
+    <a
+      class="transform ease-in duration-300 hover:text-yellow-400 hover:scale-110"
+      href="/#about">{i18n.HEADER_TEXT2}</a
     >
+    <a
+      class="transform ease-in duration-300 hover:text-yellow-400 hover:scale-110"
+      href="/#projects">{i18n.HEADER_TEXT3}</a
+    >
+    <a
+      class="transform ease-in duration-300 hover:text-yellow-400 hover:scale-110"
+      href='/#contact"'>{i18n.HEADER_TEXT4}</a
+    >
+    <span
+      id="changeLanguage"
+      class="mx-5 transform transition-transform duration-500
+    ease-in hover:scale-110 hover:rotate-[360deg] cursor-pointer objetc-top-right"
+    >
+    </span>
   </nav>
-  <ion-icon
-    id="cambiarIdioma"
-    name="globe-outline"
-    class="mx-5 transform hover:scale-110 cursor-pointer"></ion-icon>
-</header>
 
-<script>
-  //cambiar idioma con un click
-  const button = document.getElementById("cambiarIdioma");
-  button?.addEventListener("click", () => {
+  <script>
+    //cambiar idioma con un click
+    const button = document.getElementById("changeLanguage");
+    button?.addEventListener("click", () => {
+      if (window.location.pathname === "/") {
+        window.location.pathname = "/en/";
+      } else {
+        window.location.pathname = "/";
+      }
+    });
+
+    //cambiar el texto del boton segun el idioma
+    const changeLanguageButton = document.getElementById("changeLanguage");
     if (window.location.pathname === "/") {
-      window.location.pathname = "/en/";
+      changeLanguageButton!.textContent = "EN";
     } else {
-      window.location.pathname = "/";
+      changeLanguageButton!.textContent = "ES";
     }
-  });
-</script>
+  </script>
+</header>

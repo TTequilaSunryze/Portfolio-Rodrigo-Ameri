@@ -1,0 +1,66 @@
+---
+// Rain.astro
+---
+
+<style>
+  canvas#rainCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* queda detrás de todo el contenido */
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* no interfiere con clicks */
+    background: transparent; /* permite ver el contenido debajo */
+  }
+</style>
+
+<canvas id="rainCanvas"></canvas>
+
+<script is:inline>
+  const canvas = document.getElementById("rainCanvas");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext("2d");
+
+  // Creamos gotas con efecto parallax (profundidad)
+  const drops = [];
+  const dropCount = 250;
+
+  for (let i = 0; i < dropCount; i++) {
+    drops.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      length: Math.random() * 20 + 10,
+      speed: Math.random() * 4 + 2,
+      opacity: Math.random() * 0.3 + 0.2,
+      width: Math.random() * 2 + 1,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drops.forEach((d) => {
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(255,255,255,${d.opacity})`;
+      ctx.lineWidth = d.width;
+      ctx.moveTo(d.x, d.y);
+      ctx.lineTo(d.x, d.y + d.length);
+      ctx.stroke();
+
+      d.y += d.speed; // movimiento hacia abajo
+      if (d.y > canvas.height) d.y = -d.length; // reinicia desde arriba
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+
+  // Ajusta canvas al redimensionar ventana
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>

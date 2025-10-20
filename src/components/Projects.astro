@@ -5,6 +5,9 @@ import cssIcon from "../icons/cssIcon.astro";
 import javascriptIcon from "../icons/javascriptIcon.astro";
 import tailwindcssIcon from "../icons/tailwindcssIcon.astro";
 import astroIcon from "../icons/astroIcon.astro";
+import { getI18N } from "../i18n/";
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const TAGS = {
   HTML: {
@@ -40,38 +43,36 @@ const TAGS = {
 };
 const PROJECTS = [
   {
-    title: "Cervecería Ameris Brewhouse",
-    description:
-      'Página principal de la web de la cervecería artesanal "Ameris Brewhouse"',
+    title: i18n.PROJETS_TITLE1,
+    description: i18n.PROJETS_DESCRIPTION1,
     image: "/projects/ameris-web.webp",
     link: "https://ameris-brewhouse-gq38.vercel.app/",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: "calculadora JS",
-    description:
-      "Calculadora hecha con javascript, practicando habilidades con js",
+    title: i18n.PROJECT_TITLE2,
+    description: i18n.PROJECT_DESCRIPTION2,
     image: "/projects/calculadoraJs.png",
     link: "https://calculadora-js-three-phi.vercel.app/",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: "clima JS",
-    description: "aplicacion de clima que utiliza una Api",
+    title: i18n.PROJECT_TITLE3,
+    description: i18n.PROJECT_DESCRIPTION3,
     image: "/projects/climaJs.png",
     link: "https://clima-js-eight.vercel.app/",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: "Buscador Películas",
-    description: "Buscador de películas con la Api de The Movie Database",
+    title: i18n.PROJECT_TITLE4,
+    description: i18n.PROJECT_DESCRIPTION4,
     image: "/projects/buscadorPelis.png",
     link: "https://buscador-pelis-weld.vercel.app/",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: "adivinanza JS",
-    description: "MiniJuego JS practicando javascript",
+    title: i18n.PROJECT_TITLE5,
+    description: i18n.PROJECT_DESCRIPTION5,
     image: "/projects/adivinanzaJs.png",
     link: "https://adivinanza-js.vercel.app/",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
@@ -86,7 +87,7 @@ const PROJECTS = [
         {title}
       </h3>
       <p class="mb-4 text-lg font-normal text-pretty">{description}</p>
-      <ul class="text-base flex flex-row flex-wrap gap-x-6 ">
+      <ul class="text-base flex flex-row flex-wrap gap-x-6 gap-y-2 mb-4">
         {tags.map((tag) => (
           <li class="">
             <span

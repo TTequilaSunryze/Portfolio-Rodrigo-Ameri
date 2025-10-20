@@ -14,6 +14,7 @@ import Code from "../../icons/Code.astro";
 import CodeOff from "../../icons/CodeOff.astro";
 import AboutMe from "../../components/AboutMe.astro";
 import Contact from "../../components/Contact.astro";
+import Rain from "../../components/Rain.astro";
 
 import { getI18N } from "../../i18n/";
 const { currentLocale = "es" } = Astro;
@@ -138,6 +139,7 @@ const i18n = getI18N({ currentLocale });
 --- IGNORE ---
 <script>
   const arrowScroll = document.getElementById("arrow_scroll");
+  if (!arrowScroll) return;
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
